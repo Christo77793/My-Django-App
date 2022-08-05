@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!--Chartjs CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <title>Home Page</title>
+
+    <style>
+    .container-line-chart {
+        width: 70%;
+        margin: 15px auto;
+    }
+    .color1 {
+        background: linear-gradient(150deg, #39ef74, #4600f1 100%)
+    }
+    .color2 {
+        background: linear-gradient(150deg, #f731db, #4600f1 100%);
+    }
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+{% include 'app1/navbar.html' %}
+<br/>
+{% block content %}
+
+{% endblock %}
+
+<!--Boxes-->
+<div class="container" id="my-gradient-container">
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card" style="text-align: center;border-radius: 25px;background: linear-gradient(150deg, #39ef74, #4600f1 100%)">
+                <div class="card-body">
+                    <p>Box 1</p>
+                    <br>
+                    <p>Some info</p>
+                    <br>
+                    <p>Some info</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="text-align: center;border-radius: 25px;background: linear-gradient(150deg, #f731db, #4600f1 100%);">
+                <div class="card-body">
+                    <p>Box 2</p>
+                    <br>
+                    <p>Some info</p>
+                    <br>
+                    <p>Some info</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="text-align: center;border-radius: 25px;background: linear-gradient(150deg, #39ef74, #4600f1 100%)">
+                <div class="card-body">
+                    <p>Box 3</p>
+                    <br>
+                    <p>Some info</p>
+                    <br>
+                    <p>Some info</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<!--&lt;!&ndash;Table&ndash;&gt;-->
+<!--<center>-->
+<!--    <p>Simple table to see what visualization can be applied</p>-->
+<!--    <table class="charts-css area multiple show-heading show-data-on-hover show-labels">-->
+<!--        <tr>-->
+<!--            <th>Company</th>-->
+<!--            <th>Contact</th>-->
+<!--            <th>Country</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Alfreds Futterkiste</td>-->
+<!--            <td>Maria Anders</td>-->
+<!--            <td>Germany</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Centro comercial Moctezuma</td>-->
+<!--            <td>Francisco Chang</td>-->
+<!--            <td>Mexico</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--</center>-->
+
+<!--Line Chart-->
+<div class="container-line-chart">
+    <h2>Line Chart</h2>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<script>
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        datasets: [
+          {
+            label: "work load",
+            data: [2, 9, 3, 17, 6, 3, 7],
+            backgroundColor: "rgba(153,205,1,0.6)",
+          },
+          {
+            label: "free hours",
+            data: [2, 2, 5, 5, 2, 1, 10],
+            backgroundColor: "rgba(155,153,10,0.6)",
+          },
+        ],
+      },
+    });
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+-->
+</body>
+
+</html>
+
+
