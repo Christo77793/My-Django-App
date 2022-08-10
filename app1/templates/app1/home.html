@@ -3,30 +3,21 @@
 {% block content %}
 <center>
     <h1>{{project_name}}</h1>
-
+    
     <!--Boxes-->
+    <!--
     <div class="container" id="my-gradient-container">
         <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card" style="text-align: center;border-radius: 25px;background: linear-gradient(150deg, #39ef74, #4600f1 100%)">
-                    <div class="card-body">
-                        <p>Box 1</p>
-                        <br>
-                        <p>Some info</p>
-                        <br>
-                        <p>Some info</p>
-                    </div>
-                </div>
+            <div class="col-md-12" style="height: 500px;">
+                
             </div>
-            <div class="col-md-4">
-                <div class="card" style="text-align: center;border-radius: 25px;background: linear-gradient(150deg, #f731db, #4600f1 100%);">
-                    <div class="card-body">
-                        <p>Box 2</p>
-                        <br>
-                        <p>Some info</p>
-                        <br>
-                        <p>Some info</p>
-                    </div>
+            <div class="col-md-12" style="height: 500px;">
+                <div id="d2" class="card" style=" text-align: center;border-radius: 25px;background: linear-gradient(150deg, #f731db, #4600f1 100%);">                    
+                        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                        <script>                            
+                            var g2 = {{g2json|safe}}                            
+                            Plotly.plot("d2", g2, {})
+                        </script>                    
                 </div>
             </div>
             <div class="col-md-4">
@@ -42,12 +33,29 @@
             </div>
         </div>
     </div>
-
+-->
     <!--        <p>You are checking this website on {{month}} {{year}}</p>-->
     <!--        <br/>-->
 
     <!--        On the calender: <br/><br/>-->
 
     <!--        {{calendar_var|safe}}-->
+    
+    <div id="d1" style="width: 500px; height:500px;">
+                    
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script>
+            var g1 = {{g1json|safe}}
+            Plotly.plot("d1", g1, {})
+        </script>                    
+</div>
+<div id="d2" style="width: 900px; height: 500px;">
+                    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        var g2 = {{g2json|safe}}
+        Plotly.plot("d2", g2, {})
+    </script>                    
+</div>    
 </center>
 {% endblock %}
